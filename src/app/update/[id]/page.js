@@ -13,7 +13,7 @@ export default function Update() {
   const id = params.id;
   console.log(id);
   useEffect(() => {
-    fetch(`http://localhost:9999/topics/` + id)
+    fetch(process.env.NEXT_PUBLIC_API_URL + `topics/` + id)
       .then((res) => res.json())
       .then((res) => {
         setTitle(res.title);
